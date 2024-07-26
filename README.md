@@ -41,12 +41,12 @@ ONNX 是一种为表示机器学习模型而构建的开放格式。ONNX 定义�
 ONNX is an open format built to represent machine learning models. ONNX defines a common set of operators - the building blocks of machine learning and deep learning models - and a common file format to enable AI developers to use models with a variety of frameworks, tools, runtimes, and compilers.
 <https://onnx.ai/>
 
-### ONNX runtime
+### ONNX runtime/ORT
 
 <https://github.com/microsoft/onnxruntime>
 ONNX Runtime: cross-platform, high performance ML inferencing and training accelerator
 
-### TensorRT
+### TensorRT/TRT
 
 <https://github.com/NVIDIA/TensorRT>
 NVIDIA® TensorRT™ is an SDK for high-performance deep learning inference on NVIDIA GPUs. This repository contains the open source components of TensorRT.
