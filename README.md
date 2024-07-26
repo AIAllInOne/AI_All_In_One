@@ -157,3 +157,9 @@ https://blog.csdn.net/qq_41813454/article/details/138356058
 
 对称量化：最大绝对值对称法
 ![对称量化](image/对称量化.webp)
+
+## 数据
+
+### MNIST
+
+MNIST（Modified National Institute of Standards and Technology database）是一个大型手写数字数据库，广泛用于训练和测试机器学习模型，特别是在计算机视觉领域。这个数据集包含了成千上万的手写数字图像，是进行数字识别算法研究和开发的经典数据集之一。
