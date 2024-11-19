@@ -2,6 +2,18 @@ AI All in One
 
 ## 基本概念
 
+### AGI
+
+通用人工智能Artificial general intelligence (AGI) 是一种人工智能 (AI)，它在广泛的认知任务中达到或超越人类的认知能力。这与仅限于特定任务的狭义人工智能形成对比。 AGI 被认为是强人工智能的定义之一。
+
+创建 AGI 是人工智能研究以及 OpenAI和 Meta 等公司的主要目标。 2020 年的一项调查发现，有 72 个活跃的 AGI 研发项目分布在 37 个国家/地区。
+
+实现 AGI 的时间表仍然是研究人员和专家之间持续争论的话题。截至 2024 年，一些人认为它可能在几年或几十年内实现；另一些人则认为它可能需要一个世纪或更长时间。 少数人认为它可能永远无法实现，而另一少数人认为它已经存在。著名的人工智能研究人员 Geoffrey Hinton 对 AGI 的快速进展表示担忧，并表示它可能比许多人预期的更快实现。
+
+关于 AGI 的确切定义，以及 GPT-4 等现代大型语言模型 (LLM) 是否是 AGI 的早期形式，存在争议。 AGI 是科幻小说和未来研究中的常见话题。
+
+关于 AGI 是否代表生存风险存在争议。许多人工智能界人士表示，减轻人工智能对人类灭绝的风险应该是全球优先事项。其他人则认为 AGI 的发展太过遥远，不会带来这样的风险。
+
 ### 量化/Quantization
 
 + 减少内存占用
@@ -19,6 +31,10 @@ Reducing the number of bits means the resulting model requires less memory stora
 
 Automatic Mixed Precision
 <https://pytorch.org/docs/stable/notes/amp_examples.html#>
+
+### MoE
+
+
 
 ## 硬件
 
@@ -67,6 +83,16 @@ Transformer Engine (TE) 是一个用于在 NVIDIA GPU 上加速 Transformer 模�
 
 TE 通过提供与流行的大型语言模型 (LLM) 库集成的 API 来解决 FP8 支持问题。它提供了一个 Python API，其中包含可轻松构建 Transformer 层的模块以及 C++ 中与框架无关的库，包括 FP8 支持所需的结构和内核。TE 提供的模块在内部维护 FP8 训练所需的缩放因子和其他值，大大简化了用户的混合精度训练。
 
+### Triton
+
+https://github.com/triton-lang/triton
+
+Triton 是一种用于编写高效自定义深度学习原语的语言和编译器。Triton 的目标是提供一个开源环境，以比 CUDA 更高的生产力编写快速代码，同时也具有比其他现有 DSL 更高的灵活性。
+
+
+### ImageNet
+
+ImageNet项目是一个用于视觉对象识别软件研究的大型可视化数据库
 
 ## 数据类型
 
