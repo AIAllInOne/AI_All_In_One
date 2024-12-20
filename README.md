@@ -69,6 +69,9 @@ NVIDIA® TensorRT™ is an SDK for high-performance deep learning inference on N
 
 NVIDIA® TensorRT™ 是一款用于在 NVIDIA GPU 上进行高性能深度学习推理的 SDK。此存储库包含 TensorRT 的开源组件。
 
+<https://github.com/pytorch/TensorRT>
+PyTorch/TorchScript/FX compiler for NVIDIA GPUs using TensorRT
+
 ### NV Hopper
 
 NVIDIA Hopper架构是NVIDIA在2022 年3月推出的GPU 架构。 这一全新架构以美国计算机领域的先驱科学家 Grace Hopper 的名字命名，将取代两年前推出的 NVIDIA Ampere 架构。 [1]
@@ -124,6 +127,11 @@ FP8是FP16的衍生产物，它包含两种编码格式E4M3与E5M2。对于E4M3�
 <https://netron.app/>
 ![netron](image/netron.webp)
 
+### NVIDIA Nsight Compute/nuc
+
+性能分析工具
+NVIDIA Nsight™ Compute 是一款适用于 CUDA® 和 NVIDIA OptiX™ 的交互式分析器，可通过用户界面和命令行工具提供详细的性能指标和 API 调试。用户可以运行引导式分析，并使用可自定义的数据驱动用户界面比较结果，还可以在自己的工作流程中对结果进行后处理和分析。
+
 ## 算法
 
 ### DNN（深度神经网络）
@@ -160,7 +168,7 @@ https://kelvin.legal/what-is-a-loss-curve/
 
 https://blog.csdn.net/qq_41813454/article/details/138356058
 
-在深度学习的世界中，batch_size是一个至关重要的超参数。它决定了模型在训练过程中一次处理的数据量大小。选择合适的batch_size不仅可以提高模型的训练效率，还可以影响模型的泛化能力。，并通过丰富的代码示例帮助大家理解和掌握。
+在深度学习的世界中，batch_size是一个至关重要的超参数。它决定了模型在训练过程中一次处理的数据量大小。选择合适的batch_size不仅可以提高模型的训练效率，还可以影响模型的泛化能力.
 
 ## 激活函数
 
