@@ -170,6 +170,10 @@ https://blog.csdn.net/qq_41813454/article/details/138356058
 
 在深度学习的世界中，batch_size是一个至关重要的超参数。它决定了模型在训练过程中一次处理的数据量大小。选择合适的batch_size不仅可以提高模型的训练效率，还可以影响模型的泛化能力.
 
+### GEMM
+
+GEMM, General Matrix Multiplication, 通用矩阵乘
+
 ## 激活函数
 
 ### Relu
