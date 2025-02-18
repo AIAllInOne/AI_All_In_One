@@ -34,6 +34,41 @@ Automatic Mixed Precision
 
 ### MoE
 
+混合专家模型（Mixture of Experts，混合专家模型）是一种通过组合多个子模型（“专家”）来解决复杂任务的机器学习架构。它的核心思想是让不同的“专家”专注于处理输入数据的不同部分或模式，并通过一个门控网络（Gating Network）动态选择最相关的专家组合进行预测。
+
+### NextN
+
+NextN 通常指在大模型推理过程中 一次性生成后续 N 个 Token 的优化策略，旨在减少自回归生成（逐 Token 生成）的迭代次数，降低延迟。例如，当模型生成第一个 Token 后，预测后续多个 Token 并缓存。
+
+关键技术点
+自回归优化：
+传统自回归逐 Token 生成需多次调用模型（如生成 100 Token 需 100 次计算），NextN 通过预测多个 Token 减少调用次数。
+投机采样（Speculative Sampling）：
+使用小模型（Draft Model）快速生成 N 个候选 Token，大模型（Target Model）仅验证和修正，可提升生成速度 2-3 倍[1]。
+缓存复用：
+对生成的前 N Token 的 Key-Value 缓存（KV Cache）复用，避免重复计算。
+示例场景
+生成句子 "巴黎是法国的首都。" 时，NextN=3 的推理过程可能如下：
+
+模型首先生成 "巴黎"（2 Token），随后预测并缓存 "是"、"法国"、"的"（NextN=3）。
+模型直接输出这 3 Token，跳过中间生成步骤，降低延迟。
+
+###  MTP（Multi-Token Prediction）
+
+https://arxiv.org/abs/2404.19737?spm=395e44f7.4d3ad9aa.0.0.369e3d33SkjHLa&file=2404.19737
+
+MTP（Multi-Token Prediction） 是一种改进模型训练和推理效率的技术，其核心思想是 让模型一次性预测多个连续的 Token（而非传统的逐 Token 预测）。这种设计旨在减少自回归生成过程中的迭代次数，提升生成速度并降低显存占用。以下是详细解析：
+
+(1) 传统自回归生成的局限
+逐 Token 生成：
+常规大模型（如GPT）通过自回归（Autoregressive）方式逐个生成 Token，即首先生成第1个 Token，再基于前1个 Token 生成第2个 Token，依此类推。
+问题：
+生成长度为 N 的文本需要调用模型 N 次，导致高延迟（尤其长文本场景）和显存重复读写（KV Cache 频繁更新）。
+(2) MTP 的改进
+并行预测多个 Token：
+模型在 单次前向传播 中同时预测后续多个 Token（例如一次预测4个 Token）。
+训练目标调整：
+损失函数不仅计算当前 Token 的预测误差，还需计算未来 k 个 Token 的误差（k 为预测步长）。
 
 
 ## 硬件
@@ -201,3 +236,4 @@ GEMM, General Matrix Multiplication, 通用矩阵乘
 ### MNIST
 
 MNIST（Modified National Institute of Standards and Technology database）是一个大型手写数字数据库，广泛用于训练和测试机器学习模型，特别是在计算机视觉领域。这个数据集包含了成千上万的手写数字图像，是进行数字识别算法研究和开发的经典数据集之一。
+
