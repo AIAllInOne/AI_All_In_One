@@ -55,7 +55,9 @@ NextN 通常指在大模型推理过程中 一次性生成后续 N 个 Token 的
 
 ###  MTP（Multi-Token Prediction）
 
-https://arxiv.org/abs/2404.19737?spm=395e44f7.4d3ad9aa.0.0.369e3d33SkjHLa&file=2404.19737
+Better & Faster Large Language Models via Multi-token Prediction: https://arxiv.org/abs/2404.19737?spm=395e44f7.4d3ad9aa.0.0.369e3d33SkjHLa&file=2404.19737
+
+deepseek技术解读(2)-MTP（Multi-Token Prediction）的前世今生：https://zhuanlan.zhihu.com/p/18056041194
 
 MTP（Multi-Token Prediction） 是一种改进模型训练和推理效率的技术，其核心思想是 让模型一次性预测多个连续的 Token（而非传统的逐 Token 预测）。这种设计旨在减少自回归生成过程中的迭代次数，提升生成速度并降低显存占用。以下是详细解析：
 
@@ -70,6 +72,16 @@ MTP（Multi-Token Prediction） 是一种改进模型训练和推理效率的技
 训练目标调整：
 损失函数不仅计算当前 Token 的预测误差，还需计算未来 k 个 Token 的误差（k 为预测步长）。
 
+### TP, DP, PP, ZeRO
+
+https://zhuanlan.zhihu.com/p/19480848641
+
+TP指Tensor Parallelism（张量并行）， 将 训练数据 拆分到多个设备（如GPU），每个设备持有完整的模型副本，独立计算梯度后同步更新。
+PP是Pipeline Parallelism（流水线并行），将 模型参数 按矩阵维度拆分到多设备，分布式执行单层计算（如矩阵乘法、注意力头）。
+DP是Data Parallelism（数据并行）将 模型层 按顺序拆分到多设备，数据分块（Microbatch）以流水线方式串行处理。
++ DP
++ DDP DistributeDataParallel: https://pytorch.org/docs/stable/notes/ddp.html  https://www.telesens.co/2019/04/04/distributed-data-parallel-training-using-pytorch-on-aws/
++ ZeRO  https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/
 
 ## 硬件
 
