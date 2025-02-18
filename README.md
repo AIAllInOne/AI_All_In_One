@@ -167,6 +167,18 @@ FP8是FP16的衍生产物，它包含两种编码格式E4M3与E5M2。对于E4M3�
 性能分析工具
 NVIDIA Nsight™ Compute 是一款适用于 CUDA® 和 NVIDIA OptiX™ 的交互式分析器，可通过用户界面和命令行工具提供详细的性能指标和 API 调试。用户可以运行引导式分析，并使用可自定义的数据驱动用户界面比较结果，还可以在自己的工作流程中对结果进行后处理和分析。
 
+## AI 模拟器
+
+## SimAI
+
+https://github.com/AIAllInOne/Paper/tree/main/AI_SIM
+
+## ASTRA-SIM
+
+## DiistSim
+
+## multiverse
+
 ## 算法
 
 ### DNN（深度神经网络）
