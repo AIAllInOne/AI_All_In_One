@@ -244,6 +244,11 @@ GEMM, General Matrix Multiplication, 通用矩阵乘
 
 ![sigmoid](image/sigmoid.webp)
 
+## 指标
+
+TTFT time to first token
+TPOT time per out tokne
+
 ## 量化
 
 ### 对称量化和非对称量化
