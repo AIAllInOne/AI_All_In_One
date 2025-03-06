@@ -72,7 +72,7 @@ MTP（Multi-Token Prediction） 是一种改进模型训练和推理效率的技
 训练目标调整：
 损失函数不仅计算当前 Token 的预测误差，还需计算未来 k 个 Token 的误差（k 为预测步长）。
 
-### TP, DP, PP, ZeRO
+### TP, DP, PP, ZeRO, EP
 
 https://zhuanlan.zhihu.com/p/19480848641
 
@@ -83,6 +83,7 @@ DP是Data Parallelism（数据并行）将 模型层 按顺序拆分到多设备
 + DDP DistributeDataParallel: https://pytorch.org/docs/stable/notes/ddp.html  https://www.telesens.co/2019/04/04/distributed-data-parallel-training-using-pytorch-on-aws/
 + ZeRO  https://www.microsoft.com/en-us/research/blog/zero-deepspeed-new-system-optimizations-enable-training-models-with-over-100-billion-parameters/
 
+EP是 Expert Parallelism 每个设备一个专家,除 MoE 之外的模型其它部分在所有设备存储一份相同的副本
 ## 硬件
 
 ### CPU
